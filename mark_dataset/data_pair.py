@@ -58,4 +58,5 @@ class DataPair(object):
             key marks in form of [[x, y, z],[x, y, z]] as a numpy array.
         """
         key_marks = []
-        return np.array([key_marks.append(self.marks[i]) for i in self.key_marks_indices])
+        [key_marks.append(self.marks[i]) for i in self.key_marks_indices]
+        return np.array(key_marks)
