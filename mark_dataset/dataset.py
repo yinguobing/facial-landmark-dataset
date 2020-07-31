@@ -16,22 +16,28 @@ class MarkDataset(ABC):
         self.key_marks_indices = None
         super().__init__()
 
+    def __str__(self):
+        # This function overridden makes the instance printable.
+        description = "".join("{}: {}\n".format(k, v)
+                              for k, v in self.meta.items())
+        return description
+
     @abstractmethod
     def populate_dataset(self):
-        """An abstract method to be overridden. This function should populate 
-        the dataset with essential data, including: 
+        """An abstract method to be overridden. This function should populate
+        the dataset with essential data, including:
 
         * `image_files` This is a list of dataset image file paths. It should
         contain all the image samples.
 
-        * `mark_files`. This is a list of dataset mark file paths. It should 
-        contain all the mark files. Note alignment of image and mark files is 
+        * `mark_files`. This is a list of dataset mark file paths. It should
+        contain all the mark files. Note alignment of image and mark files is
         **required**. For instance:
             image_files: ["a.jpg", "b.jpg", "c.jpg"]
             mark_files; ["a.json", "b.json", "c.json"]
 
-        * `key_mark_indices` This is a list of indices of specific marks. 
-        Currently they are: left eye left corner, left eye right corner, right 
+        * `key_mark_indices` This is a list of indices of specific marks.
+        Currently they are: left eye left corner, left eye right corner, right
         eye left corner, right eye right corner, mouse left corner, mouse right
         corner.
 
@@ -41,7 +47,7 @@ class MarkDataset(ABC):
 
     @abstractmethod
     def get_marks_from_file(self, mark_file):
-        """This function should read the mark file and return the marks as a 
+        """This function should read the mark file and return the marks as a
         numpy array in form of [[x, y, z], [x, y, z]]."""
         pass
 
