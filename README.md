@@ -6,7 +6,7 @@ A collection of public facial landmark datasets and the Python code to make use 
 | Name   | Author                        | Published | #Marks | #Samples | URL                                                                                                     |
 | ------ | ----------------------------- | --------- | ------ | -------- | ------------------------------------------------------------------------------------------------------- |
 | 300-W  | Imperial College London       | 2013      | 68     | 600      | [https://ibug.doc.ic.ac.uk/](https://ibug.doc.ic.ac.uk/resources/300-W/)                                |
-| 300-VW | Imperial College London       | 2015      | 68     |          | [https://ibug.doc.ic.ac.uk/](https://ibug.doc.ic.ac.uk/resources/300-VW/)                               |
+| 300-VW | Imperial College London       | 2015      | 68     | 218597   | [https://ibug.doc.ic.ac.uk/](https://ibug.doc.ic.ac.uk/resources/300-VW/)                               |
 | LFPW   | Imperial College London       | 2013      | 68     | 1035     | [https://ibug.doc.ic.ac.uk/](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)             |
 | HELEN  | Imperial College London       | 2013      | 68     | 2330     | [https://ibug.doc.ic.ac.uk/](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)             |
 | AFW    | Imperial College London       | 2013      | 68     | 337      | [https://ibug.doc.ic.ac.uk/](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)             |
@@ -69,7 +69,7 @@ Once the dataset is constructed:
 sample = ds.pick_one()
 ```
 
-### Loop the dataset
+### Enumerate the dataset
 This could be useful when you are trying to transform or export the dataset.
 ```python
 for sample in ds.all_samples():
