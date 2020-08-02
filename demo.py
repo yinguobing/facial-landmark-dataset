@@ -1,17 +1,17 @@
 import cv2
 
-from ds300w.dataset import DS300W
-from mark_dataset.util import draw_marks
+from fmd.ds300w.dataset import DS300W
+from fmd.mark_dataset.util import draw_marks
 
 
-DS300W_DIR = "/home/robin/data/raw/facial_landmark/300w"
+DATASET_DIR = "/home/robin/data/facial-marks/300W"
 
 if __name__ == "__main__":
     # Construct a dataset.
     ds = DS300W("300w")
 
     # Populate the dataset with essential data, and see what we have got.
-    ds.populate_dataset(DS300W_DIR)
+    ds.populate_dataset(DATASET_DIR)
     print(ds)
 
     # Randomly pick a sample and show the result.

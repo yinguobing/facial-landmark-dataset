@@ -1,15 +1,15 @@
 import cv2
 import numpy as np
 
-from mark_dataset.dataset import MarkDataset
-from mark_dataset.util import FileListGenerator
+from fmd.mark_dataset.dataset import MarkDataset
+from fmd.mark_dataset.util import FileListGenerator
 
 
-class LFPW(MarkDataset):
+class HELEN(MarkDataset):
     # To use this class, there are two functions need to be overridden.
 
     def populate_dataset(self, image_dir):
-        """Populate the LFPW dataset with essential data.
+        """Populate the HELEN dataset with essential data.
 
         Args:
             image_dir: the direcotry of the dataset images.
@@ -20,7 +20,7 @@ class LFPW(MarkDataset):
         self.image_files = lg.generate_list(image_dir)
 
         # 2. Populate the mark file list. Note the order should be same with the
-        # image file list. Since the LFPW dataset had the mark file named after
+        # image file list. Since the HELEN dataset had the mark file named after
         # the image file but with different extention name `pts`. We will make
         # use of this.
         self.mark_files = [img_path.split(
@@ -28,7 +28,7 @@ class LFPW(MarkDataset):
 
         # 3 Set the key marks indices. Here key marks are: left eye left corner,
         #  left eye right corner, right eye left corner, right eye right corner,
-        #  mouse left corner, mouse right corner. For LFPW the indices are 36,
+        #  mouse left corner, mouse right corner. For HELEN the indices are 36,
         # 39, 42, 45, 48, 54. Most of the time you need to do this manually.
         # Refer to the mark dataset for details.
         self.key_marks_indices = [36, 39, 42, 45, 48, 54]

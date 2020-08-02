@@ -1,14 +1,11 @@
-"""Dataset tools for 300VW. Read this issue on GitHub before using:
-https://github.com/yinguobing/facial-landmark-dataset/issues/5"""
-
 import cv2
 import numpy as np
 
-from mark_dataset.dataset import MarkDataset
-from mark_dataset.util import FileListGenerator
+from fmd.mark_dataset.dataset import MarkDataset
+from fmd.mark_dataset.util import FileListGenerator
 
 
-class DS300VW(MarkDataset):
+class DS300W(MarkDataset):
     # To use this class, there are two functions should be overridden.
 
     def populate_dataset(self, image_dir):
@@ -38,7 +35,7 @@ class DS300VW(MarkDataset):
 
         # Even optional, it is highly recommended to update the meta data.
         self.meta.update({"authors": "Imperial College London",
-                          "year": 2015,
+                          "year": 2013,
                           "num_marks": 68,
                           "num_samples": len(self.image_files)
                           })

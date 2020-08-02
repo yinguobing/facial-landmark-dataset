@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from mark_dataset.data_pair import DataPair
+from .data_pair import DataPair
 import numpy as np
 
 
