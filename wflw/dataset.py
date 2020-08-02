@@ -45,7 +45,8 @@ class WFLW(MarkDataset):
                 for line in fid:
                     raw_data = line.strip().split(sep=" ")
                     marks = np.array(raw_data[:98*2], np.float).reshape(-1, 2)
-                    marks = np.pad(marks, (0, 1))
+                    marks = np.pad(marks, ((0, 0), (0, 1)),
+                                   mode='constant', constant_values=0)
                     image_path = os.path.join(image_dir, raw_data[-1])
                     self.image_files.append(image_path)
                     self.mark_group.append(marks)
@@ -71,7 +72,7 @@ class WFLW(MarkDataset):
                           })
 
     def get_marks_from_file(self, mark_file):
-        """This function should read the mark file and return the marks as a 
+        """This function should read the mark file and return the marks as a
         numpy array in form of [[x, y, z], [x, y, z]].
         Be carefull we are using int numbers as virtual mark files"""
         return self.mark_group[mark_file]
