@@ -22,6 +22,10 @@ class MarkDataset(ABC):
                               for k, v in self.meta.items())
         return description
 
+    def __len__(self):
+        _len = self.meta['num_samples']
+        return 0 if _len is None else _len
+
     @abstractmethod
     def populate_dataset(self):
         """An abstract method to be overridden. This function should populate
