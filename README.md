@@ -36,7 +36,7 @@ git clone https://github.com/yinguobing/facial-landmark-dataset
 
 First, initialize the dataset. Take 300W as an example.
 ```python
-from ds300w import DS300W
+from fmd.ds300w import DS300W
 
 # Set the path to the dataset directory.
 DS300W_DIR = "/home/robin/data/facial-marks/300W"
