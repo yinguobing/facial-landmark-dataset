@@ -1,6 +1,6 @@
 import cv2
 
-from fmd.ds300w.dataset import DS300W
+from fmd.ds300w import DS300W
 from fmd.mark_dataset.util import draw_marks
 
 

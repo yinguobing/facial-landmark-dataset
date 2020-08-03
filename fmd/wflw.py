@@ -15,7 +15,7 @@ class WFLW(MarkDataset):
     """
 
     def populate_dataset(self, image_dir):
-        """Populate the 300W dataset with essential data.
+        """Populate the WFLW dataset with essential data.
 
         Args:
             image_dir: the direcotry of the dataset images.
@@ -59,9 +59,7 @@ class WFLW(MarkDataset):
 
         # 3. Set the key marks indices. Here key marks are: left eye left corner,
         #  left eye right corner, right eye left corner, right eye right corner,
-        #  mouse left corner, mouse right corner. For 300W the indices are 36,
-        # 39, 42, 45, 48, 54. Most of the time you need to do this manually.
-        # Refer to the mark dataset for details.
+        #  mouse left corner, mouse right corner.
         self.key_marks_indices = [60, 64, 68, 72, 76, 82]
 
         # Even optional, it is highly recommended to update the meta data.

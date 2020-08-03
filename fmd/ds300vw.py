@@ -12,7 +12,7 @@ class DS300VW(MarkDataset):
     # To use this class, there are two functions should be overridden.
 
     def populate_dataset(self, image_dir):
-        """Populate the 300W dataset with essential data.
+        """Populate the 300vW dataset with essential data.
 
         Args:
             image_dir: the direcotry of the dataset images.
@@ -23,7 +23,7 @@ class DS300VW(MarkDataset):
         self.image_files = lg.generate_list(image_dir)
 
         # 2. Populate the mark file list. Note the order should be same with the
-        # image file list. Since the 300W dataset had the mark file named after
+        # image file list. Since the 300VW dataset had the mark file named after
         # the image file but with different extention name `pts`. We will make
         # use of this.
         self.mark_files = [img_path.split(
@@ -31,7 +31,7 @@ class DS300VW(MarkDataset):
 
         # 3 Set the key marks indices. Here key marks are: left eye left corner,
         #  left eye right corner, right eye left corner, right eye right corner,
-        #  mouse left corner, mouse right corner. For 300W the indices are 36,
+        #  mouse left corner, mouse right corner. For 300VW the indices are 36,
         # 39, 42, 45, 48, 54. Most of the time you need to do this manually.
         # Refer to the mark dataset for details.
         self.key_marks_indices = [36, 39, 42, 45, 48, 54]
