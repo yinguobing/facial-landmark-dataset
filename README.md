@@ -52,9 +52,9 @@ print(ds)
 ```
 Possible output:
 
-```shell
+```bash
 name: 300w
-authors: [Imperial College London]
+authors: Imperial College London
 year: 2013
 num_marks: 68
 num_samples: 600
