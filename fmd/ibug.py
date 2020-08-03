@@ -1,3 +1,8 @@
+"""Dataset toolkit for IBUG
+
+Useage: https://github.com/yinguobing/facial-landmark-dataset/issues/3
+"""
+
 import cv2
 import numpy as np
 

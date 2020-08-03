@@ -1,3 +1,7 @@
+"""Facial landmark dataset toolkit.
+
+Useage: https://github.com/yinguobing/facial-landmark-dataset
+"""
 from .aflw2000_3d import AFLW2000_3D
 from .afw import AFW
 from .ds300vw import DS300VW

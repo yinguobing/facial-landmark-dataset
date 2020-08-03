@@ -1,3 +1,8 @@
+"""Toolkit for dataset AFW
+
+Useage: https://github.com/yinguobing/facial-landmark-dataset/issues/4
+"""
+
 import cv2
 import numpy as np
 

@@ -1,3 +1,8 @@
+"""Toolkit for dataset 300W
+
+Useage: https://github.com/yinguobing/facial-landmark-dataset/issues/1
+"""
+
 import cv2
 import numpy as np
 

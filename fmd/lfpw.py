@@ -1,3 +1,8 @@
+"""Dataset tookit for LFPW.
+
+Useage: https://github.com/yinguobing/facial-landmark-dataset/issues/2
+"""
+
 import cv2
 import numpy as np
 

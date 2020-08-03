@@ -1,3 +1,8 @@
+"""Dataset tookit for WFLW.
+
+Useage: https://github.com/yinguobing/facial-landmark-dataset/issues/6
+"""
+
 import os
 
 import cv2
