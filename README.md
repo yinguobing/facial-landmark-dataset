@@ -70,7 +70,7 @@ sample = ds.pick_one()
 ### Enumerate the dataset
 This could be useful when you are trying to transform or export the dataset.
 ```python
-for sample in ds.all_samples():
+for sample in ds:
     # do whatever you want, like
     print(sample.marks)
 ```

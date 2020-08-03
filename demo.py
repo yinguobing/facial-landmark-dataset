@@ -1,8 +1,8 @@
 import cv2
+from tqdm import tqdm
 
 from fmd.ds300w import DS300W
 from fmd.mark_dataset.util import draw_marks
-
 
 DATASET_DIR = "/home/robin/data/facial-marks/300W"
 
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     cv2.waitKey()
 
     # Loop through the dataset and show all the samples.
-    for sample in ds.all_samples():
+    for sample in tqdm(ds):
         image = sample.read_image()
         draw_marks(image, sample.marks)
         draw_marks(image, sample.get_key_marks(), color=(255, 0, 0))

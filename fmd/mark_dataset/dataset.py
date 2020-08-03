@@ -14,6 +14,7 @@ class MarkDataset(ABC):
         self.image_files = None
         self.mark_files = None
         self.key_marks_indices = None
+        self.index = 0
         super().__init__()
 
     def __str__(self):
@@ -25,6 +26,23 @@ class MarkDataset(ABC):
     def __len__(self):
         _len = self.meta['num_samples']
         return 0 if _len is None else _len
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index == len(self.image_files) - 1:
+            raise StopIteration
+        dp = self._make_datapair(self.index)
+        self.index += 1
+        return dp
+
+    def _make_datapair(self, data_index):
+        # Get the coresponding marks.
+        marks = self.get_marks_from_file(self.mark_files[data_index])
+
+        # Construct a datapair.
+        return DataPair(self.image_files[data_index], marks, self.key_marks_indices)
 
     @abstractmethod
     def populate_dataset(self):
@@ -60,17 +78,4 @@ class MarkDataset(ABC):
         # Pick a number randomly.
         straw = np.random.randint(0, len(self.image_files))
 
-        # Get the coresponding marks.
-        marks = self.get_marks_from_file(self.mark_files[straw])
-
-        # Construct a datapair.
-        return DataPair(self.image_files[straw], marks, self.key_marks_indices)
-
-    def all_samples(self):
-        """A generator yields one data pair a time."""
-        for index in range(len(self.image_files)):
-            # Get the coresponding marks.
-            marks = self.get_marks_from_file(self.mark_files[index])
-
-            # Construct a datapair.
-            yield DataPair(self.image_files[index], marks, self.key_marks_indices)
+        return self._make_datapair(straw)
