@@ -7,14 +7,13 @@ A collection of public facial landmark datasets and the Python code to make use 
 | ----------- | -------------------------------------------------------------------------------------------------------------- | --------- | ------ | -------- |
 | 300-W       | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/300-W/)                                          | 2013      | 68     | 600      |
 | 300-VW      | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/300-VW/)                                         | 2015      | 68     | 218597   |
-| LFPW        | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)                       | 2013      | 68     | 1035     |
-| HELEN       | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)                       | 2013      | 68     | 2330     |
 | AFW         | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)                       | 2013      | 68     | 337      |
-| IBUG        | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)                       | 2013      | 68     | 135      |
 | AFLW        | [Graz University of Technology](https://www.tugraz.at/institute/icg/research/team-bischof/lrs/downloads/aflw/) | 2011      | 21     |          |
-| WFLW        | [Tsinghua National Laboratory](https://wywu.github.io/projects/LAB/WFLW.html)                                  | 2018      | 98     | 10000    |
 | AFLW2000-3D | [Chinese Academy of Sciences](http://www.cbsr.ia.ac.cn/users/xiangyuzhu/projects/3DDFA/main.htm)               | 2015      | 68     | 2000     |
-| LS3D        | [Adrian Bulat](https://www.adrianbulat.com/face-alignment)                                                     | 2017      | 68     |          |
+| HELEN       | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)                       | 2013      | 68     | 2330     |
+| IBUG        | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)                       | 2013      | 68     | 135      |
+| LFPW        | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)                       | 2013      | 68     | 1035     |
+| WFLW        | [Tsinghua National Laboratory](https://wywu.github.io/projects/LAB/WFLW.html)                                  | 2018      | 98     | 10000    |
 
 *Face images and mark coordinates are required. Some dataset used existing images from other dataset, in which case the dataset was named after the image dataset.*
 
@@ -37,7 +36,7 @@ git clone https://github.com/yinguobing/facial-landmark-dataset
 
 First, initialize the dataset. Take 300W as an example.
 ```python
-from ds300w.dataset import DS300W
+from ds300w import DS300W
 
 # Set the path to the dataset directory.
 DS300W_DIR = "/home/robin/data/facial-marks/300W"
@@ -60,7 +59,6 @@ year: 2013
 num_marks: 68
 num_samples: 600
 ```
-
 
 ### Pick one sample, randomly
 
@@ -106,11 +104,10 @@ key_marks = sample.get_key_marks()
 draw_marks(image, facial_marks)
 ```
 
-
 ## Authors
 Yin Guobing (尹国冰) - yinguobing
 
-![wechat](doc/wechat.png)
+![wechat](docs/wechat.png)
 
 ## License
 ![GitHub](https://img.shields.io/github/license/yinguobing/facial-landmark-dataset)
