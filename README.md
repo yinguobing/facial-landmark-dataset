@@ -1,6 +1,8 @@
 # facial-landmark-dataset
 A collection of public facial landmark datasets and the Python code to make use of them.
 
+Watch this [1 minute introduction video](https://www.bilibili.com/video/BV1h5411a7QN/).
+
 ## Supported Datasets
 
 | Name        | Author                                                                                                         | Published | #Marks | #Samples |
