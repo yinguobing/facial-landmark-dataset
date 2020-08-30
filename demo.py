@@ -1,14 +1,14 @@
 import cv2
 from tqdm import tqdm
 
-from fmd.ds300w import DS300W
+from fmd.wflw import WFLW
 from fmd.mark_dataset.util import draw_marks
 
-DATASET_DIR = "/home/robin/data/facial-marks/300W"
+DATASET_DIR = "/home/robin/data/facial-marks/wflw/WFLW_images"
 
 if __name__ == "__main__":
     # Construct a dataset.
-    ds = DS300W("300w")
+    ds = WFLW(is_train=True, name="wflw_train")
 
     # Populate the dataset with essential data, and see what we have got.
     ds.populate_dataset(DATASET_DIR)
