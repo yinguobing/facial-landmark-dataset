@@ -88,7 +88,7 @@ cv2.imshow("Preview", image)
 cv2.waitKey()
 ```
 
-### Get all the marks
+### Get the full marks
 
 ```python
 facial_marks = sample.marks
