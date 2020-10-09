@@ -39,7 +39,8 @@ class MarkDataset(ABC):
 
     def _make_datapair(self, data_index):
         # Get the coresponding marks.
-        marks = self.get_marks_from_file(self.mark_files[data_index])
+        marks = self.get_marks_from_file(
+            self.mark_files[data_index]).astype(float)
 
         # Construct a datapair.
         return DataPair(self.image_files[data_index], marks, self.key_marks_indices)
