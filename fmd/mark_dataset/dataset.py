@@ -42,8 +42,15 @@ class MarkDataset(ABC):
         marks = self.get_marks_from_file(
             self.mark_files[data_index]).astype(float)
 
+        # Get the bounding boxes. This is optional.
+        boxes = self.get_bbox_from_file(
+            self.mark_files[data_index]).astype(float)
+
         # Construct a datapair.
-        return DataPair(self.image_files[data_index], marks, self.key_marks_indices)
+        data_pair = DataPair(
+            self.image_files[data_index], marks, self.key_marks_indices, boxes)
+
+        return data_pair
 
     @abstractmethod
     def populate_dataset(self):
@@ -73,6 +80,11 @@ class MarkDataset(ABC):
         """This function should read the mark file and return the marks as a
         numpy array in form of [[x, y, z], [x, y, z]]."""
         pass
+
+    def get_bbox_from_file(self, annotation_file):
+        """This function should read the annotation file and return the bbox as
+        a numpy array in form of [[xmin, xmax, ymin, ymax], ...]."""
+        return None
 
     def pick_one(self):
         """Randomly pick a data pair."""

@@ -8,16 +8,17 @@ import numpy as np
 class DataPair(object):
     """A pair of data consists of a single image and coresponding marks."""
 
-    def __init__(self, image_file, marks, key_marks_indices):
+    def __init__(self, image_file, marks, key_marks_indices, bbox=None):
         """Construct a facial mark data pair
 
         Args:
             image_file: a path to the image.
             marks: facial marks stored in a numpy array, as [[x, y, z], [x, y, z]
-            ...].
+                ...].
             key_marks_indices: the indices of key marks. Key marks are: left eye
-            left corner, left eye right corner, right eye left corner, right eye
-            right corner, mouse left corner, mouse right corner.
+                left corner, left eye right corner, right eye left corner, right
+                eye right corner, mouse left corner, mouse right corner.
+            bbox: the bounding box [xmin, xmax, ymin, ymax], optional.
 
         Returns:
             a DataPair object.
@@ -25,6 +26,7 @@ class DataPair(object):
         self.image_file = image_file
         self.marks = marks
         self.key_marks_indices = key_marks_indices
+        self.bbox = bbox
 
     def read_image(self, format="BGR"):
         """Read in the image as a Numpy array.
@@ -78,3 +80,12 @@ class DataPair(object):
         """
         with open(file_name, "w") as fid:
             json.dump(self.marks.tolist(), fid)
+
+    def get_bbox(self):
+        """Return the bounding boxes.
+
+        Returns:
+            bounding box in form of [[xmin, xmax, ymin, ymax], ...] as a numpy
+            array.
+        """
+        return self.bbox
