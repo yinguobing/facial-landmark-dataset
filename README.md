@@ -10,7 +10,6 @@ Watch this [1 minute introduction video](https://www.bilibili.com/video/BV1h5411
 | 300-W       | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/300-W/)                                          | 2013      | 68     | 600      |
 | 300-VW      | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/300-VW/)                                         | 2015      | 68     | 218597   |
 | AFW         | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)                       | 2013      | 68     | 337      |
-| AFLW        | [Graz University of Technology](https://www.tugraz.at/institute/icg/research/team-bischof/lrs/downloads/aflw/) | 2011      | 21     |          |
 | AFLW2000-3D | [Chinese Academy of Sciences](http://www.cbsr.ia.ac.cn/users/xiangyuzhu/projects/3DDFA/main.htm)               | 2015      | 68     | 2000     |
 | HELEN       | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)                       | 2013      | 68     | 2330     |
 | IBUG        | [Imperial College London](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)                       | 2013      | 68     | 135      |
